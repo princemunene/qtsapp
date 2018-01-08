@@ -1223,9 +1223,9 @@ myApp.onPageInit('settings', function (page) {
 
 
         var rights = JSON.parse(localStorage.getItem("rights"));
-        if(rights[162]=='YES'){ $("#atab2").show()}
-        if(rights[163]=='YES'){ $("#atab3").show()}
-        if(rights[164]=='YES'){ $("#atab4").show()}
+        if(rights[110]=='YES'){ $("#atab2").show()}
+        if(rights[111]=='YES'){ $("#atab3").show()}
+        if(rights[112]=='YES'){ $("#atab4").show()}
        
 
  

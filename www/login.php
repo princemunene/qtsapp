@@ -12,7 +12,7 @@ if(isset($_POST['passwd'])){
 $password = $_POST['passwd'];}
 
 
- db_fns();
+ db_fns($userbranch);
  $result = mysql_query("select * from branchtbl  where name='".$userbranch."'");
  $num_results = mysql_num_rows($result);
  if($num_results==0){

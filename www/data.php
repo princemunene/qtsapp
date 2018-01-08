@@ -470,6 +470,7 @@ $itemcode=1;
 $result = mysql_query("INSERT INTO items (ItemCode, ItemName, SalePrice, PurchPrice, Bal, MinBal, Type, CatId, Category, Vat, Margin, Pack, Lid, Lname, Pid, Pname) VALUES ('".$itemcode."','".$itemname."','".$saleprice."','".$purchprice."','".$qty."','".$minbal."','".$type."',1,'GENERAL','0','1','1','630','Inventory','".$itemcode."','".$itemname."')")  or die (mysql_error());
 									
 if($result){
+$resultb= mysql_query("update items set ".$userbranch."='".$qty."' where ItemCode='".$itemcode."'");
 $resulta = mysql_query("insert into log values('0','".$username." creates new item.Code:".$itemcode."','".$username."','".date('YmdHi')."','".date('H:i')."','".date('d/m/Y')."','1')");   
 echo '<script>swal("Success!", "Item added!", "success");</script>';
 }
