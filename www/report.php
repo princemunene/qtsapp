@@ -337,7 +337,8 @@ echo'<tr style="width:100%; height:20px;padding:0; background:'.$col.'; font-wei
 <td  style="width:10%;border-width:0.5px; border-color:#666; border-style:solid;padding:5px "><?php  echo $aa ?></td>
 <td  style="width:50%;border-width:0.5px; border-color:#666; border-style:solid;padding:5px "><?php  echo stripslashes($rowa['ItemName']) ?></td>
 <td  style="width:20%;border-width:0.5px; border-color:#666; border-style:solid;padding:5px "><?php  echo stripslashes($rowa['PurchPrice']) ?></td>
-<td  style="width:20%;border-width:0.5px; border-color:#666; border-style:solid;padding:5px "><?php  echo stripslashes($rowa['SalePrice']) ?></td></tr>
+<td  style="width:20%;border-width:0.5px; border-color:#666; border-style:solid;padding:5px "><?php  echo stripslashes($rowa['SalePrice']) ?></td>
+</tr>
 
 <?php } 
 
@@ -421,7 +422,7 @@ $email=stripslashes($row['Email']);
 $logo=stripslashes($row['Logo']);
 
 
-function loopitems($rowa,$i){
+function loopitems($rowa,$i,$userbranch){
 $aa=$i+1;
 $sent='';
 if($i%2==0){$col='#fff';}else{$col='#f0f0f0';}
@@ -471,7 +472,7 @@ $fname='items_price_list_report';
   for ($i=0; $i <$num_results; $i++) {
   $row=mysql_fetch_array($result);
   $tot+=stripslashes($row['PurchPrice'])*stripslashes($row[$userbranch]);
-  loopitems($row,$i);
+  loopitems($row,$i,$userbranch);
   }
 
 
